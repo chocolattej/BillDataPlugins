@@ -1,0 +1,47 @@
+html{
+    min-height: 1000px;
+}
+body{
+    background: #F5F5F5;
+}
+.panel-header{
+    background-color: white;
+    height: 200px;
+}
+.searchlist{
+    max-width: 46%;
+    background-color:#eee;
+    cursor:pointer;
+}
+.showdatalist{
+    width: inherit;
+    height: inherit;
+    padding:6px;
+}
+.bdr {border-radius: 20px;}
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card {
+  border-radius: .5rem;
+}
+
+.table-scroll {
+  border-radius: .5rem;
+}
+thead {
+  top: 0;
+  position: sticky;
+}
+.fa-magnifying-glass {
+  color: red;
+}
+.fixed-btn {
+  position: fixed;
+  bottom: 55rem;
+  right: 19rem;
+}
