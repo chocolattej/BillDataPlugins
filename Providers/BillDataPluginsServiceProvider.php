@@ -14,16 +14,4 @@ class BillDataPluginsServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views', 'BillDataPlugins');
     }
 
-    public function map()
-    {
-        $this->mapRoutes();
-    }
-
-    protected function mapWebRoutes()
-    {
-        Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
-    }
-
 }
