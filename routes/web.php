@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'billdataPlugins' , 'namespace' => 'App\Plugins\BillDataPlugins\Controllers'],function() {
+Route::group(['prefix' => 'billdataPlugins' , 'namespace' => '\App\Plugins\BillDataPlugins\Controllers'],function() {
     Route::get('/', 'BillDataPluginsController@Index');
     Route::get('/search','BillDataPluginsController@search');
     Route::post('/autocompleteSearch','BillDataPluginsController@autocompleteSearch');
