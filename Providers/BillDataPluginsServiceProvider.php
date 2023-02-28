@@ -11,7 +11,7 @@ class BillDataPluginsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'BillDataPlugins');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'BillDataPlugins');
     }
 
 }
