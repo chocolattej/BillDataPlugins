@@ -164,9 +164,9 @@
     </div>
   <!-- Export button -->
   <div class="float-end">
-    <div class="btn-group mt-3">
-      <button type="button" id="export" class="btn btn-danger fixed-btn">Export</button>
-      <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split fixed-btn" data-bs-toggle="dropdown" aria-expanded="false">
+    <div class="btn-group mt-3 fixed-btn">
+      <button type="button" id="export" class="btn btn-danger">Export</button>
+      <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
         <span class="visually-hidden">Toggle Dropdown</span>
       </button>
       <ul class="dropdown-menu dropdown-menu-dark">

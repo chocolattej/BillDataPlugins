@@ -41,7 +41,7 @@ thead {
   color: red;
 }
 .fixed-btn {
-  position: fixed;
-  bottom: 55rem;
-  right: 19rem;
+  position:absolute;
+  top: 13%;
+  right: 16%;
 }

@@ -7,6 +7,7 @@ require __DIR__.'/../vendor/autoload.php';
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Model\User;
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -18,7 +19,7 @@ class BillDataPluginsController extends Controller
     /**
      * Display a index page.
      */
-    public function index()
+    public function index(User $user)
     {
         //
         return view('BillDataPlugins::index');
@@ -99,16 +100,7 @@ class BillDataPluginsController extends Controller
                 })
                 ->where('bill_name','like',$bill)
                 ->get();
-            // $billArray[] = array('Bill Name','TimeStamp','Inbound Traffic(kbps)','Outbound Traffic(kbps)');
-            // foreach($results as $row)
-            // {
-            //     $billArray[] = array(
-            //         'Bill Name' => $row->bill_name,
-            //         'TimeStamp' => $row->timestamp,
-            //         'Inbound Traffic(kbps)' => $this->data_to_rate($row->in_delta),
-            //         'Outbound Traffic(kbps)' => $this->data_to_rate($row->out_delta)
-            //     );
-            // }
+            
             if($results)
             {
                 $spreadsheet = new Spreadsheet();
@@ -148,17 +140,11 @@ class BillDataPluginsController extends Controller
                 header('Content-Disposition: attactment; filename="'.urlencode($final_filename).'"');
                 $writer->save('php://output');
 
-                // echo "Success";
-
             }
 
-            // print_r($billArray);
-            // header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-            // header('Content-Disposition: attachemnt; filename="'. urlencode($final_filename) .'"');
-            // print_r($billArray);
         }
 
-        // return redirect('/billdataPlugins');
+        return redirect('/billdataPlugins')->with('success','The files has benn download.');
     }
 
 }
