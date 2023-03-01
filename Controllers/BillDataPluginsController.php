@@ -2,6 +2,8 @@
 
 namespace App\Plugins\BillDataPlugins\Controllers;
 
+require __DIR__.'/../vendor/autoload.php';
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -149,11 +151,14 @@ class BillDataPluginsController extends Controller
                 // echo "Success";
 
             }
+
             // print_r($billArray);
             // header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             // header('Content-Disposition: attachemnt; filename="'. urlencode($final_filename) .'"');
             // print_r($billArray);
         }
+
+        // return redirect('/billdataPlugins');
     }
 
 }
