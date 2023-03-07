@@ -19,16 +19,10 @@ class BillDataPluginsController extends Controller
     /**
      * Display a index page.
      */
-    public function index(User $user)
+    public function index()
     {
         //
         return view('BillDataPlugins::index');
-    }
-
-    public function search()
-    {
-        //
-        return view('BillDataPlugins::search');
     }
 
     public function autocompleteSearch(Request $request)
