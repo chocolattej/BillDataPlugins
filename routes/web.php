@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'billdataPlugins','middleware' => ['auth','web'],'namespace' => '\App\Plugins\BillDataPlugins\Controllers'],function() {
-    Route::get('/', 'BillDataPluginsController@Index');
-    Route::get('/search','BillDataPluginsController@search');
+    Route::get('/','BillDataPluginsController@Index');
     Route::post('/autocompleteSearch','BillDataPluginsController@autocompleteSearch');
     Route::post('/showdata','BillDataPluginsController@showdata');
     Route::post('/exports','BillDataPluginsController@exports');
