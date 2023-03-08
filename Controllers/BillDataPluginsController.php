@@ -85,6 +85,11 @@ class BillDataPluginsController extends Controller
     }
 
     public function exports(Request $request){
+
+        // if (!Auth::check()) {
+        //     return redirect('/login');
+        // }
+
         if($request->get('name')){
             $bill = $request->get('name');
             $datetime1 = $request->get('datetime1') .':00';
@@ -143,7 +148,7 @@ class BillDataPluginsController extends Controller
 
         }
 
-        return redirect('/billdataPlugins')->with('success','The files has benn download.');
+        // return redirect('/billdataPlugins')->with('success','The files has benn download.');
     }
 
 }
