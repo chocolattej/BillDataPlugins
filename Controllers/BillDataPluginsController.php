@@ -118,7 +118,7 @@ class BillDataPluginsController extends Controller
                 foreach($results as $data)
                 {
                     $sheet->setCellValue('A'.$rowCount, $data->bill_name);
-                    $sheet->setCellValue('B'.$rowCount, $data->timestamp);
+                    $sheet->setCellValue('B'.$rowCount, str_replace("-", "/", $data->timestamp));
                     $sheet->setCellValue('C'.$rowCount, $this->data_to_rate($data->in_delta));
                     $sheet->setCellValue('D'.$rowCount, $this->data_to_rate($data->out_delta));
                     $rowCount++;
