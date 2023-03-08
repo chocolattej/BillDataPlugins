@@ -109,7 +109,11 @@ class BillDataPluginsController extends Controller
             {
                 $spreadsheet = new Spreadsheet();
                 $sheet = $spreadsheet->getActiveSheet()
-                        ->setAutoFilter('A1:J1');
+                        ->setAutoFilter('A1:D1')
+                        ->getColumnDimension('A')->setAutoSize(true)
+                        ->getColumnDimension('B')->setAutoSize(true)
+                        ->getColumnDimension('C')->setAutoSize(true)
+                        ->getColumnDimension('D')->setAutoSize(true);
 
                 $sheet->setCellValue('A1', 'Bill Name');
                 $sheet->setCellValue('B1', 'TimeStamp');
