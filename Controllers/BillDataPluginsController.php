@@ -118,6 +118,11 @@ class BillDataPluginsController extends Controller
                 foreach($results as $data)
                 {
                     $sheet->setCellValue('A'.$rowCount, $data->bill_name);
+                    $spreadsheet->getActiveSheet()->getStyle('B'.$rowCount)
+                                ->getNumberFormat()
+                                ->setFormatCode(
+                                \PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_DATE_DATETIME
+                                );
                     $sheet->setCellValue('B'.$rowCount, \PhpOffice\PhpSpreadsheet\Shared\Date::PHPToExcel($data->timestamp));
                     $sheet->setCellValue('C'.$rowCount, $this->data_to_rate($data->in_delta));
                     $sheet->setCellValue('D'.$rowCount, $this->data_to_rate($data->out_delta));
