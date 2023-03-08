@@ -112,7 +112,7 @@ class BillDataPluginsController extends Controller
                         ->setAutoFilter('A1:D1');
                 
                 foreach(range('A','D') as $alpha){
-                    $spreadsheet->getColumnDimension($alpha)->setAutoSize(true);
+                    $sheet->getColumnDimension($alpha)->setAutoSize(true);
                 }
 
                 $sheet->setCellValue('A1', 'Bill Name');
