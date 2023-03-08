@@ -109,7 +109,8 @@ class BillDataPluginsController extends Controller
             {
                 $spreadsheet = new Spreadsheet();
                 $sheet = $spreadsheet->getActiveSheet()
-                        ->setAutoFilter('A1:D1');
+                        ->setAutoFilter('A1:D1')
+                        ->getAlignment()->setHorizontal('center');
                 
                 foreach(range('A','D') as $alpha){
                     $sheet->getColumnDimension($alpha)->setAutoSize(true);
